@@ -1,0 +1,98 @@
+[package]
+authors = ["FL03 <jo3mccain@icloud.com> (https://github.com/FL03)"]
+categories = []
+default-run = "pzzld"
+description = "A template RESTful API built on Rust with the Axum webframework."
+edition = "2021"
+homepage = "https://github.com/FL03/pzzld-api/wikis"
+keywords = []
+license = "Apache-2.0"
+name = "pzzld-sdk"
+publish = false
+repository = "https://github.com/FL03/pzzld-api.git"
+readme = "README.md"
+version = "0.0.1"
+
+[[bin]]
+bench = false
+doctest = false
+name = "pzzld"
+path = "src/bin/pzzld.rs"
+
+[lib]
+bench = false
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[build-dependencies]
+
+[dev-dependencies]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+config = "0.14"
+glob = "0.3"
+lazy_static = "1"
+serde_json = "1"
+thiserror = "1"
+tower = "0.5"
+
+[dependencies.axum]
+features = [
+    "macros"
+]
+version = "0.7"
+
+[dependencies.chrono]
+features = [
+    "serde"
+]
+version = "0.4"
+
+[dependencies.serde]
+features = ["derive"]
+version = "1"
+
+[dependencies.sqlx]
+features = [
+    "any",
+    "chrono",
+    "postgres",
+    "runtime-tokio",
+    "time",
+    "uuid"
+]
+version = "0.8"
+
+[dependencies.strum]
+features = ["derive"]
+version = "0.26"
+
+[dependencies.tokio]
+features = ["full"]
+version = "1"
+
+[dependencies.tower-http]
+features = [
+    "fs",
+    "trace"
+]
+version = "0.5"
+
+[dependencies.tracing]
+features = ["log"]
+version = "0.1"
+
+[dependencies.tracing-subscriber]
+features = ["env-filter"]
+version = "0.3"
+
+[dependencies.uuid]
+features = [
+    "fast-rng",
+    "macro-diagnostics",
+    "serde",
+    "v4"
+]
+version = "1"

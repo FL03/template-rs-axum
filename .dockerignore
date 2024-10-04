@@ -1,0 +1,25 @@
+
+
+# Project Specific
+**/.artifacts/build/
+**/.artifacts/cache/
+**/.artifacts/logs/
+**/.artifacts/tmp/
+**/.github/
+
+# Language Specific
+
+### Rust
+**/target/
+
+**/Cargo.lock
+
+# Misc
+
+## File Extensions
+
+*.log
+*.log.*
+
+### Scripting
+

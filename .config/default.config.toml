@@ -1,0 +1,14 @@
+mode = "development"
+version = "v0"
+
+[logger]
+level = "debug"
+
+[database]
+
+[server]
+
+[server.addr]
+host = "127.0.0.1"
+port = 8080
+

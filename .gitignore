@@ -1,0 +1,68 @@
+# Artifacts
+**/.artifacts/cache/*
+**/.artifacts/data/*
+**/.artifacts/tmp/*
+
+# Development
+
+## Config
+**/.config/*.config.*
+
+*.env
+*.env.*
+
+!**/.config/default.config.*
+!**/.config/example.config.*
+
+!**/env.example
+!**/*.env.example
+
+## Logs
+*.log
+*.log.*
+
+
+
+# General
+
+## File Extensions
+*.db
+*.db.*
+
+*.csv
+*.csv.*
+
+*.lock
+*.lock.*
+
+*-lock.json
+
+*.sqlite
+*.sqlite.*
+
+*.zip
+*.zip.*
+
+## Package Managers
+
+### Nix
+
+!flake.lock
+
+# Language Specific
+
+### NodeJS
+**/build/
+**/dist/
+**/node_modules/
+
+**/package-lock.json
+
+### Rust-Lang
+**/debug/
+**/target/
+
+Cargo.lock
+
+*.bk
+*.bk.*
