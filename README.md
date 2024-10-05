@@ -1,50 +1,40 @@
-# pzzld-api
+# template-rs-axum
 
-[![Clippy](https://github.com/FL03/pzzld-api/actions-api/workflows/clippy.yml/badge.svg)](https://github.com/FL03/pzzld-api/actions/workflows/clippy.yml)
-[![Rust](https://github.com/FL03/pzzld-api/actions/workflows/rust.yml/badge.svg)](https://github.com/FL03/pzzld-api/actions/workflows/rust.yml)
+[![Clippy](https://github.com/FL03/template-rs-axum/actions-api/workflows/clippy.yml/badge.svg)](https://github.com/FL03/template-rs-axum/actions/workflows/clippy.yml)
+[![Rust](https://github.com/FL03/template-rs-axum/actions/workflows/rust.yml/badge.svg)](https://github.com/FL03/template-rs-axum/actions/workflows/rust.yml)
 
-[![Docker](https://github.com/FL03/pzzld-api/actions/workflows/docker.yml/badge.svg)](https://github.com/FL03/pzzld-api/actions/workflows/docker.yml)
+[![Docker](https://github.com/FL03/template-rs-axum/actions/workflows/docker.yml/badge.svg)](https://github.com/FL03/template-rs-axum/actions/workflows/docker.yml)
 
 ***
 
-### ***_This project is a work in progress_***
+_**Welcome!**_
 
-Welcome to the pzzld-api, a RESTful API built with Rust employing the [axum](https://docs.rs/axum) web-framework alongside [Tokio](https://tokio.rs) and [sqlx](https://docs.rs/sqlx)
+Welcome to the template-rs-axum, a RESTful API built with Rust employing the [axum](https://docs.rs/axum) web-framework alongside [Tokio](https://tokio.rs) and [sqlx](https://docs.rs/sqlx)
 
-# Getting Started
+## Getting Started
 
-## Building from the source
+### Building from the source
 
 ### _Clone the repository_
 
 ```bash
-git clone https://github.com/FL03/pzzld-api.git
-cd pzzld-api
-
-cargo build -r -v 
+git clone https://github.com/FL03/template-rs-axum.git
+cd template-rs-axum
 ```
 
-## Usage
+### _Build the project_
 
-### cargo
-
-```rust
-cargo run -r
+```bash
+cargo build [--release] [-v]
 ```
 
-### Docker
-```rust
-docker run -d -p "8080:8080" jo3mccain/pzzld-api
+### _Run the project_
+
+```bash
+cargo run [--release]
 ```
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
-- [Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)
-- [MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.

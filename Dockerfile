@@ -2,15 +2,15 @@ ARG RUST_VERSION=1.78.0
 
 FROM rust:${RUST_VERSION}-slim-bookworm AS builder
 
-WORKDIR /app
+WORKDIR /workspace
 
-COPY . .
+ADD . .
 
 RUN \
-    --mount=type=cache,target=/app/target/ \
+    --mount=type=cache,target=/workspace/target/ \
     --mount=type=cache,target=/usr/local/cargo/registry/ \
     cargo build --release && \
-    cp ./target/release/pzzld /
+    cp ./target/release/temper /
 
 FROM debian:bookworm-slim AS runner-builder
 
@@ -28,22 +28,22 @@ RUN adduser \
     --uid "10001" \
     appuser
 
-COPY --from=builder /pzzld /usr/local/bin
+COPY --from=builder /temper /usr/local/bin/temper
 
-RUN chown appuser /usr/local/bin/pzzld
+RUN chown appuser /usr/local/bin/temper
 
-COPY --from=builder /app/.config /opt/pzzld/.config
+COPY --from=builder /app/.config /opt/temper/.config
 
-RUN chown -R appuser /opt/pzzld
+RUN chown -R appuser /opt/temper
 
 USER appuser
 
 ENV DATABASE_URL = "" \
     MODE = "production" \
-    RUST_LOG="pzzld=debug,info"
+    RUST_LOG="temper=debug,info"
 
 WORKDIR /opt/pzzld
 
-ENTRYPOINT ["pzzld"]
-
 EXPOSE 8080/tcp
+
+ENTRYPOINT ["temper"]

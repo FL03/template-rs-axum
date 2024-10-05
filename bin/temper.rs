@@ -2,7 +2,7 @@
     Appellation: pzzld <binary>
     Contrib: FL03 <jo3mccain@icloud.com>
 */
-use pzzld_sdk::{Application, Settings};
+use template_rs_axum::{Application, Settings};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

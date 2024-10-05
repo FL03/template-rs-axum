@@ -5,8 +5,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 on:
-  pull_request:
-    branches: [ main ]
   release:
     types: [ created ]
   repository_dispatch:
@@ -25,23 +23,29 @@ jobs:
     name: Clippy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: setup (rust)
+      - 
+        name: checkout
+        uses: actions/checkout@v4
+      - 
+        name: rustup
         uses: actions-rs/toolchain@v1
         with:
           components: clippy
           override: true
           profile: minimal
           toolchain: stable
-      - name: setup (clippy)
+      - 
+        name: cargo install
         run: cargo install clippy-sarif sarif-fmt
-      - name: analyze
+      - 
+        continue-on-error: true
+        name: analyze
         run:
           cargo clippy
           --all-features
           --message-format=json | clippy-sarif | tee rust-clippy-results.sarif | sarif-fmt
-        continue-on-error: true
-      - name: Upload analysis
+      - 
+        name: upload
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: rust-clippy-results.sarif

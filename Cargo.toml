@@ -1,23 +1,23 @@
 [package]
 authors = ["FL03 <jo3mccain@icloud.com> (https://github.com/FL03)"]
 categories = []
-default-run = "pzzld"
+default-run = "temper"
 description = "A template RESTful API built on Rust with the Axum webframework."
 edition = "2021"
-homepage = "https://github.com/FL03/pzzld-api/wikis"
+homepage = "https://github.com/FL03/template-rs-axum/wikis"
 keywords = []
 license = "Apache-2.0"
-name = "pzzld-sdk"
+name = "template-rs-axum"
 publish = false
-repository = "https://github.com/FL03/pzzld-api.git"
+repository = "https://github.com/FL03/template-rs-axum.git"
 readme = "README.md"
 version = "0.0.1"
 
 [[bin]]
 bench = false
 doctest = false
-name = "pzzld"
-path = "src/bin/pzzld.rs"
+name = "temper"
+path = "bin/temper.rs"
 
 [lib]
 bench = false
@@ -40,7 +40,8 @@ tower = "0.5"
 
 [dependencies.axum]
 features = [
-    "macros"
+    "json",
+    "macros",
 ]
 version = "0.7"
 
@@ -78,7 +79,7 @@ features = [
     "fs",
     "trace"
 ]
-version = "0.5"
+version = "0.6"
 
 [dependencies.tracing]
 features = ["log"]
